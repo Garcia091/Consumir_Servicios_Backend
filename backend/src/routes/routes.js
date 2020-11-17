@@ -8,6 +8,27 @@ router.get('/',(req,res)=>{
   res.send('Si funciona')
 })
 
+router.get('/Ejercicio8',(req,res)=>{
+  mysqlConnection.query('SELECT * FROM ejercicio',
+  (err,rows,fields)=>{
+    if(!err)
+   {
+     res.json(rows);
+   }else{
+     console.log(err);
+   }
+  })
+}) 
+
+
+
+
+
+
+
+
+
+
 
 //Get Fruta
 router.get('/fruta',(req,res)=>{

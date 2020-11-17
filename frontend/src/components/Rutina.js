@@ -6,14 +6,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Table,Button,Container,Modal,ModalHeader,ModalBody,FormGroup,ModalFooter,
 } from "reactstrap";
 
-import {contarP} from './Contar'
 
-import '../css/Registro.css'
+const url = " http://localhost:3500/Ejercicio/";
 
-
-const url = "http://localhost:3500/Carros/";
-
-class Carros extends React.Component {
+class Rutina extends React.Component {
   constructor(){
     super();
     this.state = {
@@ -22,10 +18,9 @@ class Carros extends React.Component {
       modalEliminar: false,
       form:{
         id: '',
-        PLACA: '',
-        MARCA: '',
-        MODELO: '',
-        DOC_DUENIO: '',
+        nomejercicio: '',
+        descripcion: '',
+        rutina: '',
         tipoModal: ''
       }
     }}
@@ -34,15 +29,15 @@ class Carros extends React.Component {
     }
     
     //seleccionar carro
-    seleccionarCarro=(carros)=>{
+    seleccionarCarro=(elemento)=>{
      this.setState({
        tipoModal: 'actualizar',
        form: {
-          id: carros.id,
-          PLACA: carros.PLACA,
-          MARCA: carros.MARCA,
-          MODELO: carros.MODELO,
-          DOC_DUENIO: carros.DOC_DUENIO
+          id: elemento.id,
+          nomejercicio: elemento.nomejercicio,
+          descripcion: elemento.descripcion,
+          rutina: elemento.rutina,
+      
        }
      })
     }
@@ -105,47 +100,52 @@ class Carros extends React.Component {
     componentDidMount(){
       this.peticionesGet();
     }
-    
-   
-    
+
   render() {
     const {form}=this.state;
     return (
-      <div className="App">
+      <div className="container sm 4 - md 4 - lg 4">
         <br/>
         <button className="btn btn-success" onClick={()=>{this.setState({form: null, tipoModal:'insertar'});this.modalInsertar()}}>Agregar Carro</button>
         <br/><br/>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>id</th>
-              <th>PLACA</th>
-              <th>MARCA</th>
-              <th>MODELO</th>
-              <th>DUEÑO</th>
-              <th>OPERACIONES</th>
-            </tr>
-          </thead>
-          <tbody>
-              {this.state.data.map(carros =>{
-                return(
-                  <tr>
-                    <td>{carros.id}</td>
-                    <td>{carros.PLACA}</td>
-                    <td>{carros.MARCA}</td>
-                    <td>{carros.MODELO}</td>
-                    <td>{carros.DOC_DUENIO}</td>
-                    <td>
-                      <button className="btn btn-primary" onClick={()=>{this.seleccionarCarro(carros);this.modalInsertar()}}><FontAwesomeIcon icon={faEdit}/></button>
+        <section className="contenedorEjercicios  ">
+          <h1>ENTRENATE JMS</h1>
+          <ul className="card-deck mb-3 text-center">
+            {this.state.data.map((elemento, indice) => {
+              return (
+                <div className="col-md-4 ">
+                  <div className="card  mt-4" key={indice}>
+                  <h3 className="card-title"> {elemento.nomejercicio}</h3>
+                    
+          
+                  <img src={elemento.img} alt="Img"></img>
+                
+                      <div  >
+                        <li>{elemento.descripcion}</li>
+                      </div>
+                
+                 
+                  <button
+                    type="button"
+                    className="btn btn-dark btn-lg btn-block"
+                  >
+                    <a href={elemento.ruta}>¿Cómo se hace?</a>{" "}
+                  </button>
+                  <button className="btn btn-primary" onClick={()=>{this.seleccionarCarro(elemento);this.modalInsertar()}}><FontAwesomeIcon icon={faEdit}/></button>
                       {" "}
-                      <button className="btn btn-danger" onClick={()=>{this.seleccionarCarro(carros);this.setState({modalEliminar: true})}}><FontAwesomeIcon icon={faTrashAlt}/></button>
-                    </td>
-                  </tr>
-                )
-              })}
-          </tbody>
-        </table>
-<div className="container text-center">
+                      <button className="btn btn-danger" onClick={()=>{this.seleccionarCarro(elemento);this.setState({modalEliminar: true})}}><FontAwesomeIcon icon={faTrashAlt}/></button>
+                    
+                </div>
+                </div>
+              );
+            })}
+          </ul>
+          <button type="button" className="btn btn-dark btn-lg btn-">
+            <a href="seleccionar">Atrás</a>
+          </button>
+        </section>
+
+        <div className="container text-center">
         <Modal id="formContent" isOpen={this.state.modalInsertar}>
           <h1>Modal Insertar</h1>
           <ModalHeader style={{display: 'block'}}>
@@ -156,18 +156,16 @@ class Carros extends React.Component {
               <label htmlFor="PLACA">id</label><br />
               <input className="form-control" type="text" name="id" id="id"   onChange={this.handleChange} value={form?form.id: '' }/>
               <br/>
-              <label htmlFor="PLACA">PLACA</label>
-              <input className="form-control" type="text" name="PLACA" id="PLACA"  onChange={this.handleChange} value={form?form.PLACA: '' }/>
+              <label htmlFor="nomejercicio">nombre jercicio</label>
+              <input className="form-control" type="text" name="nomejercicio" id="nomejercicio"  onChange={this.handleChange} value={form?form.nomejercicio: '' }/>
               <br/>
-              <label htmlFor="MARCA">MARCA</label>
-              <input className="form-control" type="text" name="MARCA" id="MARCA" onChange={this.handleChange} value={form?form.MARCA: ''}/>
+              <label htmlFor="descripcion">descripcion</label>
+              <input className="form-control" type="text" name="descripcion" id="descripcion" onChange={this.handleChange} value={form?form.descripcion: ''}/>
              <br/>
-             <label htmlFor="MODELO">MODELO</label>
-              <input className="form-control" type="text" name="MODELO" id="MODELO" onChange={this.handleChange} value={form?form.MODELO:''}/>
+             <label htmlFor="MODELO">rutina</label>
+              <input className="form-control" type="text" name="rutina" id="rutina" onChange={this.handleChange} value={form?form.rutina:''}/>
               <br/>
-             <label htmlFor="DOC_DUENIO">DOC_DUENIO</label>
-              <input className="form-control" type="text" name="DOC_DUENIO" id="DOC_DUENIO" onChange={this.handleChange} value={form?form.DOC_DUENIO:''}/>
-            </div>
+              </div>
           
           </ModalBody>
           <ModalFooter >
@@ -197,7 +195,8 @@ class Carros extends React.Component {
 
        
     </div>
+      
     );
   }
 }
-export default Carros;
+export default Rutina;

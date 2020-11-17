@@ -6,6 +6,9 @@ import Registro from '../components/Registro'
 import Carros from '../components/Carros'
 import Frutas from '../components/Frutas'
 import FrutaDB from '../components/FrutaDB'
+import Rutina from '../components/Rutina'
+import Equipo8 from '../components/Equipo8'
+
 export default function Router() {
   return (
     <BrowserRouter>
@@ -16,6 +19,8 @@ export default function Router() {
             <Route exact path="/app" component={Carros}/>
             <Route exact path="/fruta" component={Frutas}/>
             <Route exact path="/base" component={FrutaDB}/>
+            <Route exact path="/rutina" component={Rutina}/>
+            <Route exact path="/ejercicio" component={Equipo8}/>
         </Switch>
   </BrowserRouter>
   );

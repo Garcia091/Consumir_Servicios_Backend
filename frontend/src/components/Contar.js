@@ -1,0 +1,1 @@
+ export let contarP =0;

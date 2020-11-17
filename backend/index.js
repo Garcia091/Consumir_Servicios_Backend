@@ -17,6 +17,6 @@ const routes = require ('./src/routes/routes.js')
 app.use('/api',routes);
 app.use(express.urlencoded({extended: false}));
 
-app.listen(3000,()=>{
+app.listen(5000,()=>{
   console.log('server started')
 });

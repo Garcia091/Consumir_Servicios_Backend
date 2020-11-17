@@ -1,0 +1,55 @@
+{
+  "usuario": [
+    {
+      "id": 1,
+      "apellido_paterno": "Garcia",
+      "apellido_materno": "Sanchez",
+      "nombre": "Silvia",
+      "username": "garcia.s091@gmail.com",
+      "password": "827ccb0eea8a706c4c34a16891f84e7b"
+    },
+    {
+      "id": 2,
+      "apellido_paterno": "Cano",
+      "apellido_materno": "Garcia",
+      "nombre": "Daniel",
+      "username": "dcano@gmail.com",
+      "password": "827ccb0eea8a706c4c34a16891f84e7b"
+    },
+    {
+      "id": "3",
+      "apellido_paterno": "caro",
+      "apellido_materno": "Lopez",
+      "nombre": "Camila",
+      "username": "camila@gmail.com",
+      "password": "827ccb0eea8a706c4c34a16891f84e7b"
+    },
+    {
+      "params": {
+        "id": "5",
+        "apellido_paterno": "qwe",
+        "apellido_materno": "qwe",
+        "nombre": "qwe",
+        "username": "123",
+        "password": "202cb962ac59075b964b07152d234b70"
+      },
+      "id": "a9Gsk5i"
+    },
+    {
+      "id": "45",
+      "apellido_paterno": "23",
+      "apellido_materno": "23",
+      "nombre": "23",
+      "username": "23",
+      "password": "37693cfc748049e45d87b8c7d8b9aacd"
+    },
+    {
+      "id": "6",
+      "apellido_paterno": "Garcia",
+      "apellido_materno": "SAnchez",
+      "nombre": "silvia",
+      "username": "silviagarcia93578",
+      "password": "25f9e794323b453885f5181f1b624d0b"
+    }
+  ]
+}

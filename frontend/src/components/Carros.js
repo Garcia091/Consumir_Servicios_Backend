@@ -11,7 +11,7 @@ import {contarP} from './Contar'
 import '../css/Registro.css'
 
 
-const url = "http://localhost:3500/Carros/";
+const url = "http://localhost:3500/consejo/";
 
 class Carros extends React.Component {
   constructor(){

@@ -2,18 +2,18 @@
   "usuario": [
     {
       "id": 1,
-      "apellido_paterno": "Garcia",
+      "apellido_paterno": "Mont",
       "apellido_materno": "Sanchez",
-      "nombre": "Silvia",
-      "username": "garcia.s091@gmail.com",
+      "nombre": "kim",
+      "username": "kim@gmail.com",
       "password": "827ccb0eea8a706c4c34a16891f84e7b"
     },
     {
       "id": 2,
-      "apellido_paterno": "Cano",
-      "apellido_materno": "Garcia",
-      "nombre": "Daniel",
-      "username": "dcano@gmail.com",
+      "apellido_paterno": "Alzate",
+      "apellido_materno": "ESTRADA",
+      "nombre": "ALEJANDRA",
+      "username": "alealzate11@ielasnieves.edu.co",
       "password": "827ccb0eea8a706c4c34a16891f84e7b"
     },
     {
@@ -66,9 +66,17 @@
       "nombre": "Carlos",
       "username": "carlos@gmail.com",
       "password": "e10adc3949ba59abbe56e057f20f883e"
+    },
+    {
+      "id": "9",
+      "apellido_paterno": "Lopez",
+      "apellido_materno": "Vidal",
+      "nombre": "Michell",
+      "username": "miclopez11@ielasnieves.edu.co",
+      "password": "827ccb0eea8a706c4c34a16891f84e7b"
     }
   ],
-  "Carros": [
+  "Carro": [
     {
       "id": 1,
       "PLACA": "A11D23",
@@ -170,5 +178,100 @@
       "descripcion": "42342",
       "rutina": "234"
     }
-  ]
+  ],
+  "Llegada": [
+    {
+      "id": "1",
+      "NOMBRE_ESTUDIANTE": "Alejandra",
+      "GRADO": "11",
+      "DESCARGOS": "",
+      "EXCUSA": "",
+      "USUARIO": "1",
+      "DOCENTE": "2",
+      "ESTUDIANTE": "2"
+    },
+    {
+      "id": "2",
+      "NOMBRE_ESTUDIANTE": "jshdjfsd",
+      "GRADO": "12",
+      "DESCARGOS": "fsd",
+      "EXCUSA": "sdfsd",
+      "USUARIO": "1",
+      "DOCENTE": "2",
+      "ESTUDIANTE": "1"
+    }
+  ],
+  "consejo":
+  [
+    {
+        "id": 3380,
+        "codigoMat_material": 49999,
+        "titulo": "Haciendo al señor correcto",
+        "imagen": "http://dummyimage.com/218x212.png/5fa2dd/ffffff",
+        "descripcion": "coherente"
+    },
+    {
+        "id": 11559,
+        "codigoMat_material": 36987,
+        "titulo": "jJuegos de sangre",
+        "imagen": "http://dummyimage.com/150x187.png/dddddd/000000",
+        "descripcion": "Administrado"
+    },
+    {
+        "id": 33992,
+        "codigoMat_material": 35356,
+        "titulo": "Mothlight",
+        "imagen": "http://dummyimage.com/177x222.png/cc0000/ffffff",
+        "descripcion": "responsive"
+    },
+    {
+        "id": 37808,
+        "codigoMat_material": 49999,
+        "titulo": "Monday Night Mayhem",
+        "imagen": "http://dummyimage.com/225x160.png/5fa2dd/ffffff",
+        "descripcion": "resultado final"
+    },
+    {
+        "id": 47682,
+        "codigoMat_material": 36987,
+        "titulo": "Ventoso",
+        "imagen": "http://dummyimage.com/130x104.png/5fa2dd/ffffff",
+        "descripcion": "marco"
+    },
+    {
+        "id": 52025,
+        "codigoMat_material": 57955,
+        "titulo": "Patricio",
+        "imagen": "http://dummyimage.com/226x222.png/cc0000/ffffff",
+        "descripcion": "grupo de trabajo"
+    },
+    {
+        "id": 54092,
+        "codigoMat_material": 35356,
+        "titulo": "Detrás de la pantalla",
+        "imagen": "http://dummyimage.com/128x136.png/5fa2dd/ffffff",
+        "descripcion": "función"
+    },
+    {
+        "id": 54868,
+        "codigoMat_material": 35356,
+        "titulo": "Hermanastros",
+        "imagen": "http://dummyimage.com/135x189.png/dddddd/000000",
+        "descripcion": "Asimilado"
+    },
+    {
+        "id": 55289,
+        "codigoMat_material": 57955,
+        "titulo": "Two Mrs. Carrolls, The",
+        "imagen": "http://dummyimage.com/160x154.png/ff4444/ffffff",
+        "descripcion": "uniforme"
+    },
+    {
+        "id": 75921,
+        "codigoMat_material": 57955,
+        "titulo": "Hustler, El",
+        "imagen": "http://dummyimage.com/129x156.png/dddddd/000000",
+        "descripcion": "grid-enabled"
+    }
+]
 }

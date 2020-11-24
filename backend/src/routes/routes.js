@@ -8,6 +8,50 @@ router.get('/',(req,res)=>{
   res.send('Si funciona')
 })
 
+
+
+router.get('/animal',(req,res)=>{
+  mysqlConnection.query('SELECT * FROM animal',
+  (err,rows,fields)=>{
+    if(!err)
+   {
+     res.json(rows);
+   }else{
+     console.log(err);
+   }
+  })
+}) 
+
+router.post('/animal', (req, res) => {
+  const {id,tipo,alimentacion} = req.body
+  let animal = [id,tipo,alimentacion];
+  let nuevoAnimal = `INSERT INTO animal VALUES (?,?,?);`
+
+ mysqlConnection.query(nuevoAnimal,animal, (err,results,fields) => {
+   if(err){
+     return console.error(err.message);
+   }
+   res.json({message:`Animal Almacenado en la base de datos`})
+ });
+});
+
+router.put('/animal/:id', (req,res) => {
+  const {tipo,alimentacion} = req.body
+  const { id } = req.params 
+
+mysqlConnection.query(`UPDATE animal 
+                  SET tipo = ?,alimentacion= ? 
+                  WHERE id = ?`,[tipo,alimentacion,id], (err, rows,fields) => {
+   if(!err){
+    res.json({status: `El animal ha sido actualizado con éxito`});
+   }else{
+     console.log(err);
+   }
+});
+});
+
+//---------------------------------
+
 router.get('/Ejercicio8',(req,res)=>{
   mysqlConnection.query('SELECT * FROM ejercicio',
   (err,rows,fields)=>{
@@ -20,7 +64,16 @@ router.get('/Ejercicio8',(req,res)=>{
   })
 }) 
 
-
+router.delete('/animal/:id', (req,res) => {
+  const { id } = req.params;
+  mysqlConnection.query(`DELETE FROM animal WHERE id =?`,[id],(err,rows,fields) => {
+    if("!err"){
+      res.json({status: `El animal ha sido eliminado`})
+    }else{
+      console.log(err);
+    }
+  });
+});
 
 
 

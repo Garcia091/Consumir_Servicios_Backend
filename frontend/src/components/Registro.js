@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import md5 from 'md5';
 import Cookies from 'universal-cookie';
-import '../css/Registro.css'
+
 
 const url = "http://localhost:3500/usuario";
 const cookies = new Cookies();

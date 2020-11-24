@@ -135,10 +135,9 @@
     {
       "id": 2,
       "tipo": "kiwi",
-      "color": "cafe",
+      "color": "Rojo",
       "cantidad": 20,
-      "dulce": "Si",
-      "img": "data:image/jpeg;base64,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"
+      "dulce": "Si"
     },
     {
       "id": 3,
@@ -201,77 +200,69 @@
       "ESTUDIANTE": "1"
     }
   ],
-  "consejo":
-  [
+  "consejo": [
     {
-        "id": 3380,
-        "codigoMat_material": 49999,
-        "titulo": "Haciendo al señor correcto",
-        "imagen": "http://dummyimage.com/218x212.png/5fa2dd/ffffff",
-        "descripcion": "coherente"
+      "id": 11559,
+      "codigoMat_material": 36987,
+      "titulo": "jJuegos de sangre",
+      "imagen": "http://dummyimage.com/150x187.png/dddddd/000000",
+      "descripcion": "Administrado"
     },
     {
-        "id": 11559,
-        "codigoMat_material": 36987,
-        "titulo": "jJuegos de sangre",
-        "imagen": "http://dummyimage.com/150x187.png/dddddd/000000",
-        "descripcion": "Administrado"
+      "id": 33992,
+      "codigoMat_material": 35356,
+      "titulo": "Mothlight",
+      "imagen": "http://dummyimage.com/177x222.png/cc0000/ffffff",
+      "descripcion": "responsive"
     },
     {
-        "id": 33992,
-        "codigoMat_material": 35356,
-        "titulo": "Mothlight",
-        "imagen": "http://dummyimage.com/177x222.png/cc0000/ffffff",
-        "descripcion": "responsive"
+      "id": 37808,
+      "codigoMat_material": 49999,
+      "titulo": "Monday Night Mayhem",
+      "imagen": "http://dummyimage.com/225x160.png/5fa2dd/ffffff",
+      "descripcion": "resultado final"
     },
     {
-        "id": 37808,
-        "codigoMat_material": 49999,
-        "titulo": "Monday Night Mayhem",
-        "imagen": "http://dummyimage.com/225x160.png/5fa2dd/ffffff",
-        "descripcion": "resultado final"
+      "id": 47682,
+      "codigoMat_material": 36987,
+      "titulo": "Ventoso",
+      "imagen": "http://dummyimage.com/130x104.png/5fa2dd/ffffff",
+      "descripcion": "marco"
     },
     {
-        "id": 47682,
-        "codigoMat_material": 36987,
-        "titulo": "Ventoso",
-        "imagen": "http://dummyimage.com/130x104.png/5fa2dd/ffffff",
-        "descripcion": "marco"
+      "id": 52025,
+      "codigoMat_material": 57955,
+      "titulo": "Patricio",
+      "imagen": "http://dummyimage.com/226x222.png/cc0000/ffffff",
+      "descripcion": "grupo de trabajo"
     },
     {
-        "id": 52025,
-        "codigoMat_material": 57955,
-        "titulo": "Patricio",
-        "imagen": "http://dummyimage.com/226x222.png/cc0000/ffffff",
-        "descripcion": "grupo de trabajo"
+      "id": 54092,
+      "codigoMat_material": 35356,
+      "titulo": "Detrás de la pantalla",
+      "imagen": "http://dummyimage.com/128x136.png/5fa2dd/ffffff",
+      "descripcion": "función"
     },
     {
-        "id": 54092,
-        "codigoMat_material": 35356,
-        "titulo": "Detrás de la pantalla",
-        "imagen": "http://dummyimage.com/128x136.png/5fa2dd/ffffff",
-        "descripcion": "función"
+      "id": 54868,
+      "codigoMat_material": 35356,
+      "titulo": "Hermanastros",
+      "imagen": "http://dummyimage.com/135x189.png/dddddd/000000",
+      "descripcion": "Asimilado"
     },
     {
-        "id": 54868,
-        "codigoMat_material": 35356,
-        "titulo": "Hermanastros",
-        "imagen": "http://dummyimage.com/135x189.png/dddddd/000000",
-        "descripcion": "Asimilado"
+      "id": 55289,
+      "codigoMat_material": 57955,
+      "titulo": "Two Mrs. Carrolls, The",
+      "imagen": "http://dummyimage.com/160x154.png/ff4444/ffffff",
+      "descripcion": "uniforme"
     },
     {
-        "id": 55289,
-        "codigoMat_material": 57955,
-        "titulo": "Two Mrs. Carrolls, The",
-        "imagen": "http://dummyimage.com/160x154.png/ff4444/ffffff",
-        "descripcion": "uniforme"
-    },
-    {
-        "id": 75921,
-        "codigoMat_material": 57955,
-        "titulo": "Hustler, El",
-        "imagen": "http://dummyimage.com/129x156.png/dddddd/000000",
-        "descripcion": "grid-enabled"
+      "id": 75921,
+      "codigoMat_material": 57955,
+      "titulo": "Hustler, El",
+      "imagen": "http://dummyimage.com/129x156.png/dddddd/000000",
+      "descripcion": "grid-enabled"
     }
-]
+  ]
 }

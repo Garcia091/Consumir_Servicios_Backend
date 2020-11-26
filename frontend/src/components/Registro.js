@@ -62,17 +62,7 @@ class Registro extends Component {
     console.log(this.state.form)
   }
 
-  iniciarSesion = async () => {
-    await axios.get(url, { params: { username: this.state.form.username, password: md5(this.state.form.password) } })
-      .then(response => {
-        console.log(response.data);
-      }).catch(error => {
-        console.log(error);
-      })
-
-  }
-
-
+ 
   render() {
     return (
       <div className="wrapper fadeInDown">

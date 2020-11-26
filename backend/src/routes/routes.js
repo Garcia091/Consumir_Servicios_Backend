@@ -4,14 +4,22 @@ const router = Router();
 
 const mysqlConnection = require('./db/db.js');
 
-router.get('/',(req,res)=>{
-  res.send('Si funciona')
-})
-
-
 
 router.get('/animal',(req,res)=>{
   mysqlConnection.query('SELECT * FROM animal',
+  (err,rows,fields)=>{
+    if(!err)
+   {
+     res.json(rows);
+   }else{
+     console.log(err);
+   }
+  })
+}) 
+
+router.get('/animal/:id',(req,res)=>{
+  const { id } = req.params 
+  mysqlConnection.query('SELECT * FROM animal WHERE tipo= ?', [id],
   (err,rows,fields)=>{
     if(!err)
    {
@@ -49,6 +57,19 @@ mysqlConnection.query(`UPDATE animal
    }
 });
 });
+
+router.delete('/animal/:id', (req,res) => {
+  const { id } = req.params;
+  mysqlConnection.query(`DELETE FROM animal WHERE id =?`,[id],(err,rows,fields) => {
+    if("!err"){
+      res.json({status: `El animal ha sido eliminado`})
+    }else{
+      console.log(err);
+    }
+  });
+});
+
+
 
 //---------------------------------
 
@@ -196,6 +217,18 @@ router.get('/usuario',(req,res)=>{
    }
   })
 }) 
+router.get('/usuario/:id',(req,res)=>{
+  const { id } = req.params 
+  mysqlConnection.query('SELECT * FROM usuario where id=?',
+  (err,rows,fields)=>{
+    if(!err)
+   {
+     res.json(rows);
+   }else{
+     console.log(err);
+   }
+  })
+}) 
 
     //Petición post
     router.post('/usuario', (req, res) => {
@@ -211,6 +244,7 @@ router.get('/usuario',(req,res)=>{
      });
     });
 
+  
 
 
 

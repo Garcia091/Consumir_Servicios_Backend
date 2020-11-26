@@ -6,8 +6,8 @@ import Registro from '../components/Registro'
 import Carros from '../components/Carros'
 import Frutas from '../components/Frutas'
 import FrutaDB from '../components/FrutaDB'
-import Rutina from '../components/Rutina'
 import Animal from '../components/Animal'
+import Mascotas from '../components/Mascotas'
 
 export default function Router() {
   return (
@@ -19,8 +19,8 @@ export default function Router() {
             <Route exact path="/app" component={Carros}/>
             <Route exact path="/fruta" component={Frutas}/>
             <Route exact path="/base" component={FrutaDB}/>
-            <Route exact path="/rutina" component={Rutina}/>
             <Route exact path="/animal" component={Animal}/>
+            <Route exact path="/mascotas" component={Mascotas}/>
         </Switch>
   </BrowserRouter>
   );

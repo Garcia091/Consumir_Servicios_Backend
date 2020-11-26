@@ -15,6 +15,7 @@ app.use((req, res, next) => {
 
 const routes = require ('./src/routes/routes.js')
 app.use('/api',routes);
+
 app.use(express.urlencoded({extended: false}));
 
 app.listen(5000,()=>{

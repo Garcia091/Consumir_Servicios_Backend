@@ -4,9 +4,8 @@ import {
     Table, Button, Container, Modal, ModalHeader, ModalBody, FormGroup, ModalFooter,
 } from "reactstrap";
 
-const url = "http://localhost:5000/api/animal/";
-
-class Mascotas extends React.Component {
+const url = "http://localhost:5000/api/fruta/";
+class Ensalada extends React.Component {
 
     constructor() {
         super();
@@ -17,8 +16,10 @@ class Mascotas extends React.Component {
             form: {
                 id: '',
                 tipo: '',
-                alimentacion: '',
-                img:'',
+                color: '',
+                cantidad: '',
+                dulce: '',
+                img: '',
                 tipoModal: ''
             }
         }
@@ -28,14 +29,16 @@ class Mascotas extends React.Component {
         this.setState({ modalInsertar: !this.state.modalInsertar });
     }
 
-    seleccionarAnimal = (animal) => {
+    seleccionarFruta = (fruta) => {
         this.setState({
             tipoModal: 'actualizar',
             form: {
-                id: animal.id,
-                tipo: animal.tipo,
-                alimentacion: animal.alimentacion,
-                img:animal.img
+                id: fruta.id,
+                tipo: fruta.tipo,
+                color: fruta.color,
+                cantidad: fruta.cantidad,
+                dulce: fruta.dulce,
+                img: fruta.img,
             }
         })
     }
@@ -101,49 +104,54 @@ class Mascotas extends React.Component {
     render() {
         const { form } = this.state;
         return (
-            <div className="Description container text-center">
-                <h2>Mascotas</h2>
-                    <br />
-                    <button className="btn btn-success" onClick={() => { this.setState({ form: null, tipoModal: 'insertar' }); this.modalInsertar() }}>Agregar</button>
-                    <br />
-                    <input 
+            <div className="container">
+                <br />
+                <h1 className="text-center">
+                    Ensala de frutas
+                 </h1>
+                <button className="btn btn-primary" onClick={() => { this.setState({ form: null, tipoModal: 'insertar' }); this.modalInsertar() }}>Agregar</button>
+                <br />
+                <input 
                     className="form-control" 
                     type="text" name="id" id="id" 
                     placeholder="Ingrese tipo de mascota a buscar"
                     onChange={this.handleChange} value={form ? form.id : ''} />
                     <button class="btn btn-dark" onClick={() => this.peticionesGetFil()}>Buscar</button>
-                <div className="container ">
-                    <div class="card-deck mb-3 text-center">
-                        {this.state.data.map((animal, index) => {
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">tipo</th>
+                            <th scope="col">color</th>
+                            <th scope="col">cantidad</th>
+                            <th scope="col">dulce</th>
+                            <th scope="col">img</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.data.map((fruta, index) => {
                             return (
 
-                                <div className="col-md-4 " >
-                                    <div className="card mt-4">
-                                        <div className="card-title text-center">
-                                            <h3>{animal.tipo}</h3>
-                                            <span className="badge badge-pill badge-danger ml-2">
-                                            {animal.tipo}
-                                        </span>
-                                        </div>
-
-                                        <div className="text-center">
-                                            <img className="Logo" src={animal.img} alt="Logo" />
-                                        </div>
-                                        <div className="card-body">
-                            <p>{animal.alimentacion}</p>
-                            <p><mark>{animal.id}</mark></p>
-                                        </div>
-                                        <div className="card-footer">
-                                        <button className="btn btn-primary" onClick={() => { this.seleccionarAnimal(animal); this.modalInsertar() }}>Editar</button>
-                                                {" "}
-                                        <button className="btn btn-danger" onClick={() => { this.seleccionarAnimal(animal); this.setState({ modalEliminar: true }) }}>Borrar</button>
-                                        </div>
-                                    </div>
-                                </div>
+                                <tr>
+                                    <th scope="row">{fruta.id}</th>
+                                    <td>{fruta.tipo}</td>
+                                    <td>{fruta.color}</td>
+                                    <td>{fruta.cantidad}</td>
+                                    <td>{fruta.dulce}</td>
+                                    <td><img src={fruta.img} /></td>
+                                    <td>
+                                        <button className="btn btn-primary" onClick={() => {
+                                            this.seleccionarFruta(fruta); this.modalInsertar()
+                                        }}>Editar</button>
+                                        {" "}
+                                        <button className="btn btn-danger" onClick={() => { this.seleccionarFruta(fruta); this.setState({ modalEliminar: true }) }}>Borrar</button>
+                                    </td>
+                                </tr>
                             )
                         })}
-                    </div>
-                </div>
+                    </tbody>
+                </table>
                 <div className="container text-center">
                     <Modal id="formContent" isOpen={this.state.modalInsertar}>
                         <h1 className="text-center">Modal Insertar</h1>
@@ -152,18 +160,25 @@ class Mascotas extends React.Component {
                         <ModalBody>
 
                             <div className="form-group wrapper fadeInDown">
+                               
                                 <label htmlFor="id">id</label>
                                 <input className="form-control" type="text" name="id" id="id" onChange={this.handleChange} value={form ? form.id : ''} />
-                            
+
                                 <label htmlFor="tipo">Tipo de animal</label>
                                 <input className="form-control" type="text" name="tipo" id="tipo" onChange={this.handleChange} value={form ? form.tipo : ''} />
-                            
-                                <label htmlFor="alimentacion">Alimentación</label>
-                                <input className="form-control" type="text" name="alimentacion" id="alimentacion" onChange={this.handleChange} value={form ? form.alimentacion : ''} />
-                                
+
+                                <label htmlFor="color">Color</label>
+                                <input className="form-control" type="text" name="color" id="color" onChange={this.handleChange} value={form ? form.color : ''} />
+
+                                <label htmlFor="cantidad">Cantidad</label>
+                                <input className="form-control" type="text" name="cantidad" id="cantidad" onChange={this.handleChange} value={form ? form.cantidad : ''} />
+
+                                <label htmlFor="dulce">¿La fruta es dulce?</label>
+                                <input className="form-control" type="text" name="dulce" id="dulce" onChange={this.handleChange} value={form ? form.dulce : ''} />
+
                                 <label htmlFor="img">Imagen</label>
                                 <input className="form-control" type="text" name="img" id="img" onChange={this.handleChange} value={form ? form.img : ''} />
-                            
+
                             </div>
 
                         </ModalBody>
@@ -184,7 +199,7 @@ class Mascotas extends React.Component {
                 </div>
                 <Modal isOpen={this.state.modalEliminar}>
                     <ModalBody>
-                        Está seguro de eliminar la mascota  {form && form.tipo}
+                        Está seguro de eliminar la fruta  {form && form.tipo}
                     </ModalBody>
                     <ModalFooter>
                         <button className="btn btn-danger" onClick={() => this.PeticionesDelete()}>Sí</button>
@@ -192,12 +207,10 @@ class Mascotas extends React.Component {
                     </ModalFooter>
                 </Modal>
 
-            </div>
 
+            </div>
         )
     }
-
 }
 
-export default Mascotas;
-
+export default Ensalada;

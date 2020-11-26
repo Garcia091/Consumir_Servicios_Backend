@@ -8,6 +8,7 @@ import Frutas from '../components/Frutas'
 import FrutaDB from '../components/FrutaDB'
 import Animal from '../components/Animal'
 import Mascotas from '../components/Mascotas'
+import Ensalada from '../components/Ensalada'
 
 export default function Router() {
   return (
@@ -21,6 +22,7 @@ export default function Router() {
             <Route exact path="/base" component={FrutaDB}/>
             <Route exact path="/animal" component={Animal}/>
             <Route exact path="/mascotas" component={Mascotas}/>
+            <Route exact path="/ensalada" component={Ensalada}/>
         </Switch>
   </BrowserRouter>
   );

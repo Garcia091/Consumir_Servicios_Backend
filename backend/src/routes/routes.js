@@ -31,9 +31,9 @@ router.get('/animal/:id',(req,res)=>{
 }) 
 
 router.post('/animal', (req, res) => {
-  const {id,tipo,alimentacion} = req.body
-  let animal = [id,tipo,alimentacion];
-  let nuevoAnimal = `INSERT INTO animal VALUES (?,?,?);`
+  const {id,tipo,alimentacion,img} = req.body
+  let animal = [id,tipo,alimentacion,img];
+  let nuevoAnimal = `INSERT INTO animal VALUES (?,?,?,?);`
 
  mysqlConnection.query(nuevoAnimal,animal, (err,results,fields) => {
    if(err){
@@ -44,12 +44,12 @@ router.post('/animal', (req, res) => {
 });
 
 router.put('/animal/:id', (req,res) => {
-  const {tipo,alimentacion} = req.body
+  const {tipo,alimentacion,img} = req.body
   const { id } = req.params 
 
 mysqlConnection.query(`UPDATE animal 
-                  SET tipo = ?,alimentacion= ? 
-                  WHERE id = ?`,[tipo,alimentacion,id], (err, rows,fields) => {
+                  SET tipo = ?,alimentacion= ?, img =?
+                  WHERE id = ?`,[tipo,alimentacion,img,id], (err, rows,fields) => {
    if(!err){
     res.json({status: `El animal ha sido actualizado con éxito`});
    }else{
@@ -117,10 +117,23 @@ router.get('/fruta',(req,res)=>{
   })
 }) 
 
+router.get('/fruta/:id',(req,res)=>{
+  const { id } = req.params 
+  mysqlConnection.query('SELECT * FROM Fruta WHERE tipo= ?', [id],
+  (err,rows,fields)=>{
+    if(!err)
+   {
+     res.json(rows);
+   }else{
+     console.log(err);
+   }
+  })
+}) 
+
 router.post('/fruta', (req, res) => {
-  const {id,tipo,color,cantidad,dulce} = req.body
-  let fruta = [id,tipo,color,cantidad,dulce];
-  let nuevoFruta = `INSERT INTO Fruta VALUES (?,?,?,?,?);`
+  const {id,tipo,color,cantidad,dulce,img} = req.body
+  let fruta = [id,tipo,color,cantidad,dulce,img];
+  let nuevoFruta = `INSERT INTO Fruta VALUES (?,?,?,?,?,?);`
 
  mysqlConnection.query(nuevoFruta,fruta, (err,results,fields) => {
    if(err){
@@ -131,10 +144,11 @@ router.post('/fruta', (req, res) => {
 });
 
 router.put('/fruta/:id', (req,res) => {
-  const {tipo,color,cantidad,dulce} = req.body
+  const {tipo,color,cantidad,dulce,img} = req.body
   const { id } = req.params 
 
-mysqlConnection.query(`UPDATE Fruta SET tipo=?,color=?,cantidad=?,dulce = ? WHERE id = ?`,[tipo,color,cantidad,dulce,id], (err, rows,fields) => {
+mysqlConnection.query(`UPDATE Fruta SET tipo=?,color=?,cantidad=?,dulce = ?,img =?
+                 WHERE id = ?`,[tipo,color,cantidad,dulce,img,id], (err, rows,fields) => {
    if(!err){
     res.json({status: `La fruta ha sido actualizado con éxito`});
    }else{
